@@ -40,7 +40,9 @@ Visit: [shirolan.github.io](https://shirolan.github.io)
 4. Your site will be live at `https://shirolan.github.io` within minutes!
 
 ## 📧 Contact
-Reach out through the contact section on the website.
+ You can Reach me at sumeetchandankar@gmail.com.
+ Thank you
+ **
 
 ---
 **© 2026 SHIROLAN**
