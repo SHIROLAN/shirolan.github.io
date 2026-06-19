@@ -1,70 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHIROLAN - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Sumeet Chandankar — AI Engineer & Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">SHIROLAN</h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-        </div>
-    </section>
+<!-- CURSOR -->
+<div id="cursor"></div>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h3>About Me</h3>
-            <p>I'm a passionate developer with expertise in building modern web applications. I love solving complex problems and creating elegant solutions.</p>
-        </div>
-    </section>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">AM<span>.dev</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">XP</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h3>Featured Projects</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>Project 1</h4>
-                    <p>Description of your first project</p>
-                    <a href="#">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h4>Project 2</h4>
-                    <p>Description of your second project</p>
-                    <a href="#">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h4>Project 3</h4>
-                    <p>Description of your third project</p>
-                    <a href="#">View Project</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section id="hero">
+  <canvas id="stars"></canvas>
+  <div class="hero-inner">
+    <p class="hero-label">// Full-Stack · AI Engineering · Open Source</p>
+    <h1>Alex<br><em>Mercer.</em></h1>
+    <div class="hero-cycle">
+      <div class="cycle-inner" id="cycleInner">
+        <span>LLM Applications</span>
+        <span>Agentic Systems</span>
+        <span>Full-Stack Engineering</span>
+        <span>ML Pipelines</span>
+        <span>LLM Applications</span>
+      </div>
+    </div>
+    <p class="hero-tagline">Building systems that think — from raw model to production product.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Work &rarr;</a>
+      <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h3>Get In Touch</h3>
-            <p>Email: your.email@example.com</p>
-            <p><a href="https://github.com/SHIROLAN" target="_blank">GitHub</a> | <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">01 &mdash; About</div>
+  <h2>Craft at the intersection<br>of code and cognition.</h2>
+  <div class="about-grid reveal">
+    <div class="about-bio">
+      <p>I build <strong>AI-powered products</strong> that go beyond demos — production-ready systems with reliable inference, thoughtful UX, and clean APIs. My background spans distributed systems, LLM orchestration, and the full web stack.</p>
+      <p>I believe the most interesting engineering happens when <strong>language models meet real constraints</strong>: latency budgets, cost ceilings, imperfect data, and actual users. That's where good architecture matters.</p>
+      <p>Currently based in <strong>San Francisco, CA</strong> — open to remote-first teams working on meaningful AI problems.</p>
+    </div>
+    <div class="skills-block">
+      <div>
+        <p class="skill-group-label">Languages</p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Rust</span><span class="chip">SQL</span><span class="chip">Bash</span>
         </div>
-    </section>
+      </div>
+      <div>
+        <p class="skill-group-label">AI / ML</p>
+        <div class="chips">
+          <span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">OpenAI API</span><span class="chip">Anthropic Claude</span><span class="chip">HuggingFace</span><span class="chip">RAG</span><span class="chip">Fine-tuning</span><span class="chip">Agents</span><span class="chip">Vector DBs</span><span class="chip">Evals</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Frameworks</p>
+        <div class="chips">
+          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">FastAPI</span><span class="chip">Node.js</span><span class="chip">tRPC</span><span class="chip">Prisma</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Infra</p>
+        <div class="chips">
+          <span class="chip">Docker</span><span class="chip">AWS</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Vercel</span><span class="chip">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 SHIROLAN. All rights reserved.</p>
-    </footer>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 &mdash; Projects</div>
+  <h2>Things I've shipped.</h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-tags">
+        <span class="tag tag-ai">AI</span>
+        <span class="tag tag-web">Web</span>
+        <span class="tag tag-oss">Open Source</span>
+      </div>
+      <p class="project-title">DocMind</p>
+      <p class="project-desc">AI document Q&A — upload any PDF, ask anything, get cited answers.</p>
+      <p class="project-summary">Problem: users needed to extract insights from dense PDFs without reading everything. Solution: RAG pipeline with Claude API, pgvector, and a streaming Next.js frontend with inline citations.</p>
+      <div class="project-stack">
+        <span class="stack-chip">Claude API</span><span class="stack-chip">Next.js</span><span class="stack-chip">pgvector</span><span class="stack-chip">FastAPI</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="transition-delay:.1s">
+      <div class="project-tags">
+        <span class="tag tag-ai">AI</span>
+        <span class="tag tag-api">API</span>
+      </div>
+      <p class="project-title">ResearchAgent</p>
+      <p class="project-desc">Autonomous multi-step research agent powered by LangGraph and live web search.</p>
+      <p class="project-summary">A stateful agent that plans, searches, reads, and synthesizes multi-source reports on any topic. Includes a human-in-the-loop approval step and exports to Markdown.</p>
+      <div class="project-stack">
+        <span class="stack-chip">LangGraph</span><span class="stack-chip">Tavily API</span><span class="stack-chip">FastAPI</span><span class="stack-chip">Redis</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="transition-delay:.2s">
+      <div class="project-tags">
+        <span class="tag tag-web">Web</span>
+        <span class="tag tag-ai">AI</span>
+      </div>
+      <p class="project-title">Synthex SaaS</p>
+      <p class="project-desc">B2B content intelligence platform — AI writes, edits, and scores long-form copy at scale.</p>
+      <p class="project-summary">Full-stack SaaS with Stripe billing, team workspaces, and a custom fine-tuned GPT-4 variant for brand-voice consistency. Serves 1,200+ paying users.</p>
+      <div class="project-stack">
+        <span class="stack-chip">Next.js</span><span class="stack-chip">tRPC</span><span class="stack-chip">OpenAI</span><span class="stack-chip">Supabase</span><span class="stack-chip">Stripe</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="transition-delay:.3s">
+      <div class="project-tags">
+        <span class="tag tag-cli">CLI</span>
+        <span class="tag tag-oss">Open Source</span>
+      </div>
+      <p class="project-title">llm-eval-kit</p>
+      <p class="project-desc">Lightweight CLI for running structured evals against any OpenAI-compatible endpoint.</p>
+      <p class="project-summary">Configurable test suites via YAML, supports factuality, toxicity, and custom rubric grading. Integrates with CI pipelines. 800+ GitHub stars.</p>
+      <div class="project-stack">
+        <span class="stack-chip">Python</span><span class="stack-chip">Typer</span><span class="stack-chip">Rich</span><span class="stack-chip">YAML</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="project-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">03 &mdash; Experience</div>
+  <h2>Where I've worked.</h2>
+  <div class="timeline reveal">
+
+    <div class="tl-item">
+      <div class="tl-meta">
+        <p class="tl-date">2023 — Present</p>
+        <p class="tl-company">Vercel / Freelance</p>
+      </div>
+      <div>
+        <p class="tl-role">Senior AI Engineer</p>
+        <p class="tl-desc">Designed and shipped production RAG systems, agentic pipelines, and developer tooling for enterprise clients. Reduced inference costs 40% via prompt compression and caching strategies.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-meta">
+        <p class="tl-date">2021 — 2023</p>
+        <p class="tl-company">Stripe</p>
+      </div>
+      <div>
+        <p class="tl-role">Full-Stack Engineer</p>
+        <p class="tl-desc">Built internal ML-assisted fraud detection dashboards and APIs processing 50M+ events/day. Led migration of core services from Ruby to TypeScript.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-meta">
+        <p class="tl-date">2019 — 2021</p>
+        <p class="tl-company">YC Startup</p>
+      </div>
+      <div>
+        <p class="tl-role">Software Engineer</p>
+        <p class="tl-desc">Early engineer on a B2B analytics platform. Owned the data pipeline from ingestion to visualization, scaling from 0 to 500 paying customers.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-label">04 &mdash; Writing</div>
+  <h2>Things I've thought about.</h2>
+  <div class="writing-grid">
+    <a href="#" class="article-card reveal">
+      <div class="article-meta"><span>Apr 2025</span><span>8 min read</span></div>
+      <p class="article-title">RAG is not retrieval. It's a reasoning contract.</p>
+      <p class="article-excerpt">Why most RAG implementations fail at the wrong layer — and how to think about chunk boundaries as semantic commitments.</p>
+    </a>
+    <a href="#" class="article-card reveal" style="transition-delay:.1s">
+      <div class="article-meta"><span>Feb 2025</span><span>12 min read</span></div>
+      <p class="article-title">The hidden cost of LLM orchestration frameworks</p>
+      <p class="article-excerpt">A rigorous look at what LangChain, LlamaIndex, and LangGraph actually abstract — and when that abstraction becomes debt.</p>
+    </a>
+    <a href="#" class="article-card reveal" style="transition-delay:.2s">
+      <div class="article-meta"><span>Nov 2024</span><span>6 min read</span></div>
+      <p class="article-title">Building eval pipelines before shipping AI features</p>
+      <p class="article-excerpt">How I treat LLM evals like unit tests: structure, coverage, and the metrics that actually predict production behaviour.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">05 &mdash; Contact</div>
+  <h2>Let's build something.</h2>
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Open to opportunities
+      </div>
+      <h3>Say hello.</h3>
+      <p>Whether it's a full-time role, a contract project, or just a question about AI systems — my inbox is always open.</p>
+      <div class="socials">
+        <a href="mailto:alex@example.com" class="social-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          alex@example.com
+        </a>
+        <a href="https://github.com/alexmercer" class="social-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/alexmercer
+        </a>
+        <a href="https://linkedin.com/in/alexmercer" class="social-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/alexmercer
+        </a>
+      </div>
+    </div>
+    <form class="contact-form reveal" style="transition-delay:.15s" onsubmit="handleForm(event)">
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" placeholder="Jane Smith" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="jane@company.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell me what you're building..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:fit-content;cursor:none;">Send Message &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Alex Mercer — Built with <em>precision</em>.</span>
+  <span style="font-size:10px;letter-spacing:.15em;">SAN FRANCISCO, CA</span>
+</footer>
+
+<script>
+/* ── CURSOR ─────────────────────────────────────── */
+const cur = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .project-card, .article-card, .chip').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('big'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+});
+
+/* ── NAV HIDE/SHOW ──────────────────────────────── */
+let lastScroll = 0;
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY;
+  nav.classList.toggle('hidden', s > lastScroll && s > 120);
+  lastScroll = s;
+});
+
+/* ── HERO CYCLE ─────────────────────────────────── */
+const inner = document.getElementById('cycleInner');
+let idx = 0;
+setInterval(() => {
+  idx++;
+  inner.style.transform = `translateY(-${idx * 32}px)`;
+  if (idx >= 4) setTimeout(() => { inner.style.transition = 'none'; inner.style.transform = 'translateY(0)'; idx = 0; setTimeout(() => inner.style.transition = '', 50); }, 520);
+}, 2200);
+
+/* ── PARTICLE CANVAS ────────────────────────────── */
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+let W, H, pts;
+const ACCENT = '#a8ff3e';
+
+function resize() {
+  W = canvas.width  = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+  pts = Array.from({length: 80}, () => ({
+    x: Math.random() * W, y: Math.random() * H,
+    vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+    r: Math.random() * 1.5 + .5
+  }));
+}
+resize();
+window.addEventListener('resize', resize);
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  // connections
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i+1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 120) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(168,255,62,${(1-d/120)*.12})`;
+        ctx.lineWidth = .5;
+        ctx.moveTo(pts[i].x, pts[i].y);
+        ctx.lineTo(pts[j].x, pts[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  // dots
+  pts.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(168,255,62,0.35)';
+    ctx.fill();
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W) p.vx *= -1;
+    if (p.y < 0 || p.y > H) p.vy *= -1;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* ── SCROLL REVEAL ──────────────────────────────── */
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: .12 });
+reveals.forEach(r => obs.observe(r));
+
+/* ── FORM ───────────────────────────────────────── */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Sent!';
+  btn.style.background = 'transparent';
+  btn.style.color = 'var(--accent)';
+  setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
+}
+</script>
 </body>
 </html>
