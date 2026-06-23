@@ -78,6 +78,44 @@
   .nav-links a:hover { color: var(--accent); }
 
   /* ── CANVAS / HERO ───────────────────────────── */
+
+.hero-layout{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:4rem;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-image{
+    flex:0 0 420px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:420px;
+    height:auto;
+    border-radius:24px;
+
+    object-fit:cover;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+      0 0 60px rgba(125,140,255,.35),
+      0 0 120px rgba(125,140,255,.15);
+
+    transition:.4s;
+}
+
+.hero-image img:hover{
+    transform:translateY(-8px);
+}
   #hero {
     position: relative;
     min-height: 100vh;
