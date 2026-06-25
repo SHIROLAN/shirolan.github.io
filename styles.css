@@ -1,4 +1,4 @@
-<style>
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -307,6 +307,7 @@
     background: linear-gradient(135deg, rgba(168,255,62,.04) 0%, transparent 60%);
     opacity: 0;
     transition: opacity .3s;
+    pointer-events: none;
   }
   .project-card:hover { transform: translateY(-6px); border-color: rgba(168,255,62,.35); box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(168,255,62,.12); }
   .project-card:hover::before { opacity: 1; }
@@ -586,5 +587,5 @@
     .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
     .tl-item { grid-template-columns: 1fr; gap: 8px; }
     footer { flex-direction: column; gap: 8px; text-align: center; }
-  }
-</style>
+  }  
+
