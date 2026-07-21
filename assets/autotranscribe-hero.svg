@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b0c0e"/>
+      <stop offset="50%" stop-color="#111316"/>
+      <stop offset="100%" stop-color="#0b0c0e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8ff3e"/>
+      <stop offset="100%" stop-color="#6eff00"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8ff3e" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#a8ff3e" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glowFilter">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#a8ff3e" stroke-width="0.5">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Ambient glow circles -->
+  <circle cx="400" cy="225" r="200" fill="#a8ff3e" opacity="0.03" filter="url(#blur2)"/>
+  <circle cx="380" cy="200" r="120" fill="#a8ff3e" opacity="0.04" filter="url(#blur1)"/>
+
+  <!-- === LEFT SIDE: Folder + Media Files === -->
+  <!-- Folder base -->
+  <g transform="translate(80, 140)">
+    <!-- Folder back -->
+    <rect x="0" y="20" width="160" height="110" rx="6" fill="#16191f" stroke="#1f2330" stroke-width="1"/>
+    <!-- Folder tab -->
+    <path d="M0 26 Q0 20 6 20 L50 20 L60 10 Q62 8 65 8 L154 8 Q160 8 160 14 L160 20" fill="#16191f" stroke="#1f2330" stroke-width="1"/>
+    <path d="M0 26 Q0 20 6 20 L50 20 L60 10 Q62 8 65 8 L154 8 Q160 8 160 14 L160 20" fill="#1a1d24" stroke="#1f2330" stroke-width="1"/>
+    <rect x="0" y="20" width="160" height="110" rx="6" fill="#1a1d24" stroke="#1f2330" stroke-width="1"/>
+
+    <!-- Audio file card -->
+    <rect x="12" y="35" width="65" height="45" rx="4" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+    <!-- Audio waveform icon -->
+    <g transform="translate(28, 48)">
+      <rect x="0" y="8" width="3" height="10" rx="1.5" fill="url(#accent)" opacity="0.8"/>
+      <rect x="6" y="3" width="3" height="20" rx="1.5" fill="url(#accent)" opacity="0.9"/>
+      <rect x="12" y="6" width="3" height="14" rx="1.5" fill="url(#accent)"/>
+      <rect x="18" y="1" width="3" height="24" rx="1.5" fill="url(#accent)" opacity="0.9"/>
+      <rect x="24" y="5" width="3" height="16" rx="1.5" fill="url(#accent)" opacity="0.8"/>
+    </g>
+    <text x="26" y="72" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">audio.mp3</text>
+
+    <!-- Video file card -->
+    <rect x="85" y="35" width="65" height="45" rx="4" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+    <!-- Play icon -->
+    <g transform="translate(112, 45)">
+      <polygon points="8,0 16,8 8,16" fill="url(#accent)" opacity="0.9"/>
+    </g>
+    <text x="96" y="72" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">video.mp4</text>
+
+    <!-- Monitoring indicator (pulsing dot) -->
+    <circle cx="150" cy="12" r="3" fill="#a8ff3e" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="90" y="108" font-family="JetBrains Mono, monospace" font-size="7" fill="#4a5260" letter-spacing="0.5">monitoring...</text>
+  </g>
+
+  <!-- === CENTER: AI Processing Pipeline === -->
+  <!-- Pipeline arrow/flow -->
+  <g transform="translate(290, 200)">
+    <!-- Connecting line left -->
+    <line x1="0" y1="25" x2="40" y2="25" stroke="#a8ff3e" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+    <!-- Animated dot on pipeline -->
+    <circle r="2.5" fill="#a8ff3e" opacity="0.9">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M0,25 L180,25"/>
+    </circle>
+  </g>
+
+  <!-- AI Brain / Whisper processing node -->
+  <g transform="translate(340, 160)">
+    <!-- Outer ring -->
+    <circle cx="45" cy="65" r="50" fill="none" stroke="#a8ff3e" stroke-width="0.8" opacity="0.2">
+      <animateTransform attributeName="transform" type="rotate" from="0 45 65" to="360 45 65" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="45" cy="65" r="42" fill="none" stroke="#a8ff3e" stroke-width="0.5" opacity="0.15" stroke-dasharray="8 4">
+      <animateTransform attributeName="transform" type="rotate" from="360 45 65" to="0 45 65" dur="15s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Center circle -->
+    <circle cx="45" cy="65" r="30" fill="#111316" stroke="url(#accent)" stroke-width="1.5"/>
+    <circle cx="45" cy="65" r="30" fill="none" stroke="#a8ff3e" stroke-width="1" opacity="0.15" filter="url(#glowFilter)"/>
+
+    <!-- Brain/AI icon -->
+    <g transform="translate(30, 48)" fill="none" stroke="url(#accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Simple brain outline -->
+      <path d="M5,17 Q5,5 15,2 Q20,0 25,3 Q30,0 35,2 Q40,5 35,10 Q38,15 35,20 Q30,28 20,28 Q10,28 5,17Z" opacity="0.9"/>
+      <path d="M20,2 L20,28" opacity="0.3"/>
+      <path d="M12,8 Q20,12 28,8" opacity="0.4"/>
+      <path d="M10,18 Q20,14 30,18" opacity="0.4"/>
+    </g>
+
+    <!-- "Whisper" label -->
+    <text x="45" y="112" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#a8ff3e" letter-spacing="1" opacity="0.8">WHISPER AI</text>
+  </g>
+
+  <!-- Processing indicators -->
+  <g transform="translate(355, 255)">
+    <text font-family="JetBrains Mono, monospace" font-size="7" fill="#4a5260" letter-spacing="0.3">
+      <tspan x="0" dy="0">transcribing...</tspan>
+      <tspan x="0" dy="12" fill="#a8ff3e" opacity="0.6">■■■■■■■□□□</tspan>
+    </text>
+  </g>
+
+  <!-- === RIGHT SIDE: Transcript Output === -->
+  <!-- Connecting line -->
+  <g transform="translate(500, 200)">
+    <line x1="0" y1="25" x2="40" y2="25" stroke="#a8ff3e" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+    <circle r="2.5" fill="#a8ff3e" opacity="0.9">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M0,25 L160,25"/>
+    </circle>
+  </g>
+
+  <!-- Transcript document -->
+  <g transform="translate(545, 110)">
+    <!-- Document shadow -->
+    <rect x="4" y="4" width="150" height="185" rx="6" fill="#000" opacity="0.3" filter="url(#blur1)"/>
+    <!-- Document -->
+    <rect x="0" y="0" width="150" height="185" rx="6" fill="#16191f" stroke="#1f2330" stroke-width="1"/>
+    <!-- Document header -->
+    <rect x="0" y="0" width="150" height="28" rx="6" fill="#1a1d24" stroke="#1f2330" stroke-width="1"/>
+    <rect x="0" y="22" width="150" height="6" fill="#1a1d24"/>
+    <!-- File icon -->
+    <rect x="12" y="8" width="12" height="14" rx="2" fill="none" stroke="#a8ff3e" stroke-width="0.8" opacity="0.7"/>
+    <text x="30" y="17" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" opacity="0.8">transcript.txt</text>
+
+    <!-- Transcript text lines -->
+    <g transform="translate(14, 40)">
+      <text font-family="JetBrains Mono, monospace" font-size="6.5" fill="#c9d1de" opacity="0.7">
+        <tspan x="0" dy="0">[00:00:01] Speaker 1:</tspan>
+        <tspan x="0" dy="12" fill="#4a5260">Welcome to today's session.</tspan>
+        <tspan x="0" dy="14" fill="#4a5260">We'll be discussing the</tspan>
+        <tspan x="0" dy="12" fill="#4a5260">new architecture updates.</tspan>
+        <tspan x="0" dy="16">[00:01:23] Speaker 2:</tspan>
+        <tspan x="0" dy="12" fill="#4a5260">Thanks for joining. Let me</tspan>
+        <tspan x="0" dy="12" fill="#4a5260">walk you through the...</tspan>
+        <tspan x="0" dy="14" fill="#a8ff3e" opacity="0.4">▎</tspan>
+      </text>
+    </g>
+
+    <!-- Checkmark badge -->
+    <g transform="translate(125, 160)">
+      <circle cx="10" cy="10" r="10" fill="#111316" stroke="#a8ff3e" stroke-width="1"/>
+      <path d="M5,10 L9,14 L16,6" fill="none" stroke="#a8ff3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- "Complete" label -->
+    <text x="75" y="182" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" opacity="0.6">DONE</text>
+  </g>
+
+  <!-- === TOP CENTER: Title overlay === -->
+  <text x="400" y="45" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="800" fill="#eaf0fb" letter-spacing="2" opacity="0.6">AUTOTRANSCRIBE</text>
+  <text x="400" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#4a5260" letter-spacing="3">AI-POWERED MEDIA TRANSCRIPTION</text>
+
+  <!-- === Decorative corner accents === -->
+  <!-- Top-left corner -->
+  <g opacity="0.2">
+    <line x1="20" y1="20" x2="20" y2="50" stroke="#a8ff3e" stroke-width="0.8"/>
+    <line x1="20" y1="20" x2="50" y2="20" stroke="#a8ff3e" stroke-width="0.8"/>
+  </g>
+  <!-- Top-right corner -->
+  <g opacity="0.2">
+    <line x1="780" y1="20" x2="780" y2="50" stroke="#a8ff3e" stroke-width="0.8"/>
+    <line x1="780" y1="20" x2="750" y2="20" stroke="#a8ff3e" stroke-width="0.8"/>
+  </g>
+  <!-- Bottom-left corner -->
+  <g opacity="0.2">
+    <line x1="20" y1="430" x2="20" y2="400" stroke="#a8ff3e" stroke-width="0.8"/>
+    <line x1="20" y1="430" x2="50" y2="430" stroke="#a8ff3e" stroke-width="0.8"/>
+  </g>
+  <!-- Bottom-right corner -->
+  <g opacity="0.2">
+    <line x1="780" y1="430" x2="780" y2="400" stroke="#a8ff3e" stroke-width="0.8"/>
+    <line x1="780" y1="430" x2="750" y2="430" stroke="#a8ff3e" stroke-width="0.8"/>
+  </g>
+
+  <!-- Bottom tech label -->
+  <text x="400" y="435" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#4a5260" letter-spacing="4">PYTHON · OPENAI WHISPER · PYTORCH · WATCHDOG · FFMPEG</text>
+</svg>

@@ -312,6 +312,21 @@
   .project-card:hover { transform: translateY(-6px); border-color: rgba(168,255,62,.35); box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(168,255,62,.12); }
   .project-card:hover::before { opacity: 1; }
 
+  .project-image {
+    margin: -28px -28px 20px -28px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .project-card:hover .project-image img { transform: scale(1.03); }
+
   .project-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag {
     font-family: var(--mono);
@@ -327,6 +342,8 @@
   .tag-api   { color: #f59e0b; border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.05); }
   .tag-oss   { color: #c084fc; border-color: rgba(192,132,252,.35); background: rgba(192,132,252,.05); }
   .tag-cli   { color: #34d399; border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.05); }
+  .tag-devtools { color: #38bdf8; border-color: rgba(56,189,248,.35); background: rgba(56,189,248,.05); }
+  .tag-distributed { color: #c084fc; border-color: rgba(192,132,252,.35); background: rgba(192,132,252,.05); }
 
   .project-title {
     font-family: var(--display);
