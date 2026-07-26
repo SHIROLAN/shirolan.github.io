@@ -1,0 +1,314 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b0c0e"/>
+      <stop offset="40%" stop-color="#111316"/>
+      <stop offset="100%" stop-color="#0b0c0e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8ff3e"/>
+      <stop offset="100%" stop-color="#6eff00"/>
+    </linearGradient>
+    <linearGradient id="kafkaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8ff3e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#a8ff3e" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="mongoGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="redisGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.035" stroke="#a8ff3e" stroke-width="0.5">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/><line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/><line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Ambient glow -->
+  <circle cx="400" cy="220" r="180" fill="#a8ff3e" opacity="0.025" filter="url(#softGlow)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- TOP: Title -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="400" y="38" text-anchor="middle" font-family="Syne, sans-serif" font-size="14" font-weight="800" fill="#eaf0fb" letter-spacing="3" opacity="0.55">CHRONOS</text>
+  <text x="400" y="55" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#4a5260" letter-spacing="2.5">EVENT-DRIVEN AUDIT TRAIL · TIME-TRAVEL QUERIES</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LEFT: Timeline with versioned entity states -->
+  <!-- ═══════════════════════════════════════════ -->
+  <g transform="translate(45, 95)">
+    <!-- Timeline vertical line -->
+    <line x1="22" y1="0" x2="22" y2="280" stroke="#1f2330" stroke-width="2"/>
+
+    <!-- Rewind arrow (time-travel concept) -->
+    <g transform="translate(-8, -12)" opacity="0.5">
+      <path d="M30,0 C15,0 5,10 5,25" fill="none" stroke="#a8ff3e" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2">
+        <animate attributeName="stroke-dashoffset" values="0;-10" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <polygon points="2,18 8,28 14,18" fill="#a8ff3e" opacity="0.8"/>
+    </g>
+    <text x="22" y="-2" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" fill="#a8ff3e" opacity="0.5" letter-spacing="1">REWIND</text>
+
+    <!-- v1 state -->
+    <g transform="translate(0, 20)">
+      <circle cx="22" cy="18" r="6" fill="#111316" stroke="#a8ff3e" stroke-width="1.5"/>
+      <circle cx="22" cy="18" r="6" fill="#a8ff3e" opacity="0.15"/>
+      <text x="22" y="21" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" font-weight="bold">1</text>
+      <!-- Entity card -->
+      <rect x="44" y="2" width="120" height="36" rx="4" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+      <text x="54" y="15" font-family="JetBrains Mono, monospace" font-size="6" fill="#a8ff3e" opacity="0.6">t=00:01</text>
+      <text x="54" y="25" font-family="JetBrains Mono, monospace" font-size="7" fill="#c9d1de">user.name = "Alice"</text>
+      <text x="54" y="33" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">user.role = "viewer"</text>
+    </g>
+
+    <!-- v2 state -->
+    <g transform="translate(0, 85)">
+      <circle cx="22" cy="18" r="6" fill="#111316" stroke="#a8ff3e" stroke-width="1.5"/>
+      <circle cx="22" cy="18" r="6" fill="#a8ff3e" opacity="0.15"/>
+      <text x="22" y="21" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" font-weight="bold">2</text>
+      <rect x="44" y="2" width="120" height="36" rx="4" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+      <text x="54" y="15" font-family="JetBrains Mono, monospace" font-size="6" fill="#a8ff3e" opacity="0.6">t=00:05</text>
+      <text x="54" y="25" font-family="JetBrains Mono, monospace" font-size="7" fill="#c9d1de">user.name = "Alice"</text>
+      <text x="54" y="33" font-family="JetBrains Mono, monospace" font-size="7" fill="#f59e0b">user.role = "admin" ✦</text>
+    </g>
+
+    <!-- v3 state -->
+    <g transform="translate(0, 150)">
+      <circle cx="22" cy="18" r="6" fill="#111316" stroke="#a8ff3e" stroke-width="1.5"/>
+      <circle cx="22" cy="18" r="6" fill="#a8ff3e" opacity="0.15"/>
+      <text x="22" y="21" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" font-weight="bold">3</text>
+      <rect x="44" y="2" width="120" height="36" rx="4" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+      <text x="54" y="15" font-family="JetBrains Mono, monospace" font-size="6" fill="#a8ff3e" opacity="0.6">t=00:12</text>
+      <text x="54" y="25" font-family="JetBrains Mono, monospace" font-size="7" fill="#c9d1de">user.email = "a@co"</text>
+      <text x="54" y="33" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">user.role = "admin"</text>
+    </g>
+
+    <!-- Snapshot indicator -->
+    <g transform="translate(0, 225)">
+      <rect x="0" y="0" width="170" height="32" rx="4" fill="url(#mongoGrad)" stroke="#38bdf8" stroke-width="0.6" stroke-opacity="0.3"/>
+      <text x="12" y="13" font-family="JetBrains Mono, monospace" font-size="6" fill="#38bdf8" opacity="0.8">SNAPSHOT @ v3</text>
+      <text x="12" y="23" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">full state persisted</text>
+    </g>
+
+    <!-- Label -->
+    <text x="22" y="282" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#4a5260" letter-spacing="1.5">ENTITY VERSIONS</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CENTER: Kafka Event Stream -->
+  <!-- ═══════════════════════════════════════════ -->
+  <g transform="translate(260, 100)">
+    <!-- Kafka container -->
+    <rect x="0" y="0" width="130" height="200" rx="8" fill="#111316" stroke="#1f2330" stroke-width="1"/>
+    <!-- Kafka header -->
+    <rect x="0" y="0" width="130" height="26" rx="8" fill="#16191f" stroke="#1f2330" stroke-width="1"/>
+    <rect x="0" y="20" width="130" height="6" fill="#16191f"/>
+    <!-- Kafka icon (simple queue bars) -->
+    <g transform="translate(10, 7)">
+      <rect x="0" y="0" width="4" height="12" rx="1" fill="#a8ff3e" opacity="0.7"/>
+      <rect x="6" y="3" width="4" height="9" rx="1" fill="#a8ff3e" opacity="0.85"/>
+      <rect x="12" y="1" width="4" height="11" rx="1" fill="#a8ff3e"/>
+    </g>
+    <text x="32" y="17" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#a8ff3e" letter-spacing="0.5">KAFKA</text>
+
+    <!-- Event stream lines (animated) -->
+    <g transform="translate(15, 38)">
+      <!-- Event 1 -->
+      <g>
+        <rect x="0" y="0" width="100" height="18" rx="3" fill="url(#kafkaGrad)" stroke="#a8ff3e" stroke-width="0.5" stroke-opacity="0.2"/>
+        <circle cx="12" cy="9" r="3" fill="#a8ff3e" opacity="0.6"/>
+        <text x="20" y="12" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">USER_CREATED</text>
+        <circle r="2" fill="#a8ff3e" opacity="0.9">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M0,9 L100,9"/>
+        </circle>
+      </g>
+      <!-- Event 2 -->
+      <g transform="translate(0, 26)">
+        <rect x="0" y="0" width="100" height="18" rx="3" fill="url(#kafkaGrad)" stroke="#a8ff3e" stroke-width="0.5" stroke-opacity="0.2"/>
+        <circle cx="12" cy="9" r="3" fill="#f59e0b" opacity="0.6"/>
+        <text x="20" y="12" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">ROLE_CHANGED</text>
+        <circle r="2" fill="#f59e0b" opacity="0.9">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M0,9 L100,9"/>
+        </circle>
+      </g>
+      <!-- Event 3 -->
+      <g transform="translate(0, 52)">
+        <rect x="0" y="0" width="100" height="18" rx="3" fill="url(#kafkaGrad)" stroke="#a8ff3e" stroke-width="0.5" stroke-opacity="0.2"/>
+        <circle cx="12" cy="9" r="3" fill="#a8ff3e" opacity="0.6"/>
+        <text x="20" y="12" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">EMAIL_UPDATED</text>
+        <circle r="2" fill="#a8ff3e" opacity="0.9">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M0,9 L100,9"/>
+        </circle>
+      </g>
+      <!-- Event 4 (placeholder) -->
+      <g transform="translate(0, 78)">
+        <rect x="0" y="0" width="100" height="18" rx="3" fill="url(#kafkaGrad)" stroke="#a8ff3e" stroke-width="0.5" stroke-opacity="0.15" stroke-dasharray="3 2"/>
+        <text x="12" y="12" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#4a5260">waiting...</text>
+      </g>
+    </g>
+
+    <!-- Kafka stats -->
+    <text x="15" y="180" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">offset: 42 · lag: 0ms</text>
+    <text x="15" y="192" font-family="JetBrains Mono, monospace" font-size="6" fill="#a8ff3e" opacity="0.4">partitions: 3 · replicas: 2</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- RIGHT: Storage + API layer -->
+  <!-- ═══════════════════════════════════════════ -->
+  <g transform="translate(430, 100)">
+    <!-- MongoDB -->
+    <rect x="0" y="0" width="115" height="90" rx="8" fill="#111316" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.3"/>
+    <g transform="translate(10, 8)">
+      <!-- Mongo leaf icon simplified -->
+      <path d="M8,2 Q14,0 18,5 Q22,10 18,16 Q14,20 8,18 Q2,16 2,10 Q2,4 8,2Z" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.7"/>
+      <text x="28" y="13" font-family="JetBrains Mono, monospace" font-size="7" fill="#38bdf8" letter-spacing="0.5">MONGODB</text>
+    </g>
+    <!-- DB entries -->
+    <g transform="translate(10, 30)">
+      <rect x="0" y="0" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="10" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">snapshots: 1,247</text>
+      <rect x="0" y="18" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="28" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">events: 8,431</text>
+      <rect x="0" y="36" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="46" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">versions: 3,892</text>
+    </g>
+    <text x="10" y="78" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#4a5260">temporal versioning · TTL indexes</text>
+
+    <!-- Redis -->
+    <rect x="130" y="0" width="115" height="90" rx="8" fill="#111316" stroke="#f97316" stroke-width="0.8" stroke-opacity="0.3"/>
+    <g transform="translate(140, 8)">
+      <!-- Redis diamond icon -->
+      <polygon points="10,0 20,10 10,20 0,10" fill="none" stroke="#f97316" stroke-width="1" opacity="0.7"/>
+      <text x="28" y="13" font-family="JetBrains Mono, monospace" font-size="7" fill="#f97316" letter-spacing="0.5">REDIS</text>
+    </g>
+    <g transform="translate(140, 30)">
+      <rect x="0" y="0" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="10" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">cache_hit: 94.2%</text>
+      <rect x="0" y="18" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="28" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">replay_ttl: 300s</text>
+      <rect x="0" y="36" width="95" height="14" rx="2" fill="#0b0c0e" opacity="0.5"/>
+      <text x="6" y="46" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">keys: 2,108</text>
+    </g>
+    <text x="140" y="78" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#4a5260">event cache · replay acceleration</text>
+
+    <!-- FastAPI -->
+    <rect x="0" y="105" width="245" height="80" rx="8" fill="#111316" stroke="#c084fc" stroke-width="0.8" stroke-opacity="0.3"/>
+    <g transform="translate(10, 113)">
+      <!-- FastAPI lightning icon -->
+      <polygon points="10,0 4,12 10,10 8,20 18,7 12,9" fill="#c084fc" opacity="0.7"/>
+      <text x="28" y="13" font-family="JetBrains Mono, monospace" font-size="7" fill="#c084fc" letter-spacing="0.5">FASTAPI</text>
+    </g>
+    <!-- API endpoints -->
+    <g transform="translate(10, 132)">
+      <rect x="0" y="0" width="225" height="12" rx="2" fill="#0b0c0e" opacity="0.4"/>
+      <text x="6" y="9" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#34d399">GET</text>
+      <text x="28" y="9" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">/entities/{id}/history</text>
+
+      <rect x="0" y="16" width="225" height="12" rx="2" fill="#0b0c0e" opacity="0.4"/>
+      <text x="6" y="23" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#34d399">GET</text>
+      <text x="28" y="23" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">/entities/{id}/state?t=...</text>
+
+      <rect x="0" y="32" width="225" height="12" rx="2" fill="#0b0c0e" opacity="0.4"/>
+      <text x="6" y="39" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#60a5fa">POST</text>
+      <text x="28" y="39" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">/entities/{id}/events</text>
+
+      <rect x="0" y="48" width="225" height="12" rx="2" fill="#0b0c0e" opacity="0.4"/>
+      <text x="6" y="55" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#f59e0b">GET</text>
+      <text x="28" y="55" font-family="JetBrains Mono, monospace" font-size="5.5" fill="#c9d1de">/audit/log?from=&to=</text>
+    </g>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FLOW ARROWS: left→kafka→storage -->
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Left to Kafka -->
+  <g opacity="0.3">
+    <line x1="215" y1="225" x2="260" y2="200" stroke="#a8ff3e" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle r="2.5" fill="#a8ff3e" opacity="0.9">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M215,225 L260,200"/>
+    </circle>
+  </g>
+  <!-- Kafka to Mongo -->
+  <g opacity="0.3">
+    <line x1="390" y1="150" x2="430" y2="145" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle r="2.5" fill="#38bdf8" opacity="0.9">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M390,150 L430,145"/>
+    </circle>
+  </g>
+  <!-- Kafka to Redis -->
+  <g opacity="0.3">
+    <line x1="390" y1="170" x2="430" y2="145" stroke="#f97316" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle r="2.5" fill="#f97316" opacity="0.9">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M390,170 L430,145"/>
+    </circle>
+  </g>
+  <!-- API to Kafka (consume) -->
+  <g opacity="0.25">
+    <line x1="390" y1="260" x2="430" y2="260" stroke="#c084fc" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle r="2" fill="#c084fc" opacity="0.8">
+      <animateMotion dur="2.8s" repeatCount="indefinite" path="M390,260 L430,260"/>
+    </circle>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BOTTOM: Audit Log Visualization -->
+  <!-- ═══════════════════════════════════════════ -->
+  <g transform="translate(45, 355)">
+    <rect x="0" y="0" width="710" height="65" rx="6" fill="#111316" stroke="#1f2330" stroke-width="0.8"/>
+    <!-- Header -->
+    <text x="14" y="16" font-family="JetBrains Mono, monospace" font-size="7" fill="#a8ff3e" opacity="0.6" letter-spacing="1">AUDIT LOG</text>
+    <line x1="70" y1="12" x2="710" y2="12" stroke="#1f2330" stroke-width="0.5"/>
+
+    <!-- Log entries -->
+    <g transform="translate(14, 24)">
+      <text font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">
+        <tspan fill="#a8ff3e" opacity="0.5">[00:01:00]</tspan><tspan fill="#c9d1de"> USER_CREATED </tspan><tspan fill="#4a5260">{"id":"u1","name":"Alice","role":"viewer"}</tspan>
+      </text>
+      <text y="12" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">
+        <tspan fill="#f59e0b" opacity="0.5">[00:05:22]</tspan><tspan fill="#c9d1de"> ROLE_CHANGED </tspan><tspan fill="#4a5260">{"id":"u1","old":"viewer","new":"admin"}</tspan>
+      </text>
+      <text y="24" font-family="JetBrains Mono, monospace" font-size="6" fill="#4a5260">
+        <tspan fill="#a8ff3e" opacity="0.5">[00:12:07]</tspan><tspan fill="#c9d1de"> EMAIL_UPDATED </tspan><tspan fill="#4a5260">{"id":"u1","email":"alice@corp.io"}</tspan>
+      </text>
+    </g>
+
+    <!-- Cursor blink -->
+    <rect x="700" y="42" width="1" height="10" fill="#a8ff3e" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BOTTOM LABEL: Tech stack -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="400" y="438" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#4a5260" letter-spacing="3">PYTHON · FASTAPI · KAFKA · MONGODB · REDIS · DOCKER · PYDANTIC</text>
+
+  <!-- Corner accents -->
+  <g opacity="0.18" stroke="#a8ff3e" stroke-width="0.8">
+    <line x1="18" y1="18" x2="18" y2="42"/><line x1="18" y1="18" x2="42" y2="18"/>
+    <line x1="782" y1="18" x2="782" y2="42"/><line x1="782" y1="18" x2="758" y2="18"/>
+    <line x1="18" y1="432" x2="18" y2="408"/><line x1="18" y1="432" x2="42" y2="432"/>
+    <line x1="782" y1="432" x2="782" y2="408"/><line x1="782" y1="432" x2="758" y2="432"/>
+  </g>
+</svg>
